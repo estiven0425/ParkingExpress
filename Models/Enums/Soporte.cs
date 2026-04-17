@@ -2,9 +2,6 @@
 
 public enum Soporte
 {
-    Accesorio,
-    Camión,
-    Carro,
-    Mixto,
+    Automovil,
     Motocicleta
 }
