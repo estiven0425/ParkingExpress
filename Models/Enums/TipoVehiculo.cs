@@ -1,7 +1,7 @@
 ﻿namespace ParkingExpress.Models.Enums;
 
-public enum Soporte
+public enum TipoVehiculo
 {
-    Automovil,
+    Automóvil,
     Motocicleta
 }
