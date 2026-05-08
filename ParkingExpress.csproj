@@ -12,6 +12,7 @@
       <Folder Include="Commands\" />
       <Folder Include="Database\" />
       <Folder Include="Helpers\" />
+      <Folder Include="Models\Interfaces\" />
       <Folder Include="Resources\" />
       <Folder Include="ViewModel\" />
       <Folder Include="Views\" />

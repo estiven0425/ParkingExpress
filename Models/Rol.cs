@@ -2,11 +2,11 @@
 
 public class Rol : Base
 {
-    public string? Nombre { get; private set; }
+    public string Nombre { get; private set; }
 
     public ICollection<Persona> Personas { get; set; } = new List<Persona>();
     
-    public Rol()
+    private Rol()
     {}
 
     public Rol(string nombre, string creadoPor)

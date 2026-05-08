@@ -1,9 +1,11 @@
 ﻿using System.Security.Cryptography;
+using ParkingExpress.Models;
 
 namespace ParkingExpress.Services;
 
 public static class Seguridad
 {
+    public static Usuario? UsuarioActual { get; private set; }
     public static string EncriptarContrasena(string contrasena)
     {
         byte[] salt = RandomNumberGenerator.GetBytes(16);
@@ -45,5 +47,17 @@ public static class Seguridad
         return autenticacion
             ? EncriptarContrasena(contrasenaNueva)
             : throw new UnauthorizedAccessException("Credenciales inválidas.");
+    }
+
+    public static bool IniciarSesion(string nombreUsuario, string contrasena)
+    {
+        UsuarioActual = null;
+
+        return false;
+    }
+
+    public static void CerrarSesion()
+    {
+        UsuarioActual = null;
     }
 }

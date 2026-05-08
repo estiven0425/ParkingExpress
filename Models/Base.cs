@@ -2,50 +2,33 @@
 
 public abstract class Base
 {
-    public int  Id { get; init; }
-    private bool Eliminado { get; set; }
+    public int Id { get; init; }
+    public bool Eliminado { get; private set; }
     
     public DateTime CreadoEn { get; private set; }
-    
-    private string _creadoPor = string.Empty;
-    public string CreadoPor
-    {
-        get => _creadoPor;
-        private set => _creadoPor = string.IsNullOrEmpty(value)
-            ? throw new ArgumentNullException(nameof(value), "La auditoría no puede ser nula")
-            : value;
-    }
+    public string CreadoPor { get; private set; } = string.Empty;
         
     public DateTime? ModificadoEn { get; private set; }
-    
-    private string? _modificadoPor;
-    public string? ModificadoPor
-    {
-        get => _modificadoPor;
-        private set => _modificadoPor = string.IsNullOrEmpty(value)
-            ? throw new ArgumentNullException(nameof(value), "La auditoría no puede ser nula")
-            : value;
-    }
+    public string? ModificadoPor { get; private set; }
 
     protected void RegistrarCreacion(string creadoPor)
     {
         CreadoEn = DateTime.Now;
-        CreadoPor = creadoPor;
+        CreadoPor = string.IsNullOrEmpty(creadoPor)
+            ? throw new ArgumentNullException(nameof(creadoPor), "La auditoría no puede ser nula")
+            : creadoPor;
     }
 
     protected void RegistrarModificacion(string modificadoPor)
     {
         ModificadoEn = DateTime.Now;
-        ModificadoPor = modificadoPor;
+        ModificadoPor = string.IsNullOrEmpty(modificadoPor)
+            ? throw new ArgumentNullException(nameof(modificadoPor), "La auditoría no puede ser nula")
+            : modificadoPor;
     }
     
     public void AlternarEliminacion()
     {
         Eliminado = !Eliminado;
-    }
-
-    public bool EstadoEliminado()
-    {
-        return Eliminado;
     }
 }

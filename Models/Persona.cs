@@ -8,7 +8,7 @@ public class Persona : Base
     public int RolId { get; private set; }
     public Rol Rol { get; private set; }
     
-    public Persona()
+    private Persona()
     {}
 
     public Persona(string nombre, long identificacion, Rol rol, string creadoPor)
