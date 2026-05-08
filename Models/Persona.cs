@@ -1,12 +1,17 @@
-﻿namespace ParkingExpress.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ParkingExpress.Models;
 
 public class Persona : Base
 {
-    public string Nombre { get; private set; }
+    [MaxLength(255)]
+    public string Nombre { get; private set; } = string.Empty;
     public long Identificacion { get; private set; }
     
     public int RolId { get; private set; }
-    public Rol Rol { get; private set; }
+    public Rol Rol { get; private set; } = null!;
+
+    public ICollection<Recibo> Recibos { get; set; } =  new List<Recibo>();
     
     private Persona()
     {}

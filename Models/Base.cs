@@ -1,4 +1,6 @@
-﻿namespace ParkingExpress.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ParkingExpress.Models;
 
 public abstract class Base
 {
@@ -6,9 +8,11 @@ public abstract class Base
     public bool Eliminado { get; private set; }
     
     public DateTime CreadoEn { get; private set; }
+    [MaxLength(255)]
     public string CreadoPor { get; private set; } = string.Empty;
         
     public DateTime? ModificadoEn { get; private set; }
+    [MaxLength(255)]
     public string? ModificadoPor { get; private set; }
 
     protected void RegistrarCreacion(string creadoPor)

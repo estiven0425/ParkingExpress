@@ -1,14 +1,17 @@
-﻿using ParkingExpress.Services;
+﻿using System.ComponentModel.DataAnnotations;
+using ParkingExpress.Services;
 
 namespace ParkingExpress.Models;
 
 public class Usuario : Base
 {
     public int PersonaId { get; private set; }
-    public Persona Persona { get; private set; }
-    
-    public string NombreUsuario { get; private set; }
-    public string Contrasena { get; private set; }
+    public Persona Persona { get; private set; } = null!;
+
+    [MaxLength(255)]
+    public string NombreUsuario { get; private set; } = string.Empty;
+    [MaxLength(500)]
+    public string Contrasena { get; private set; } = string.Empty;
     
     private Usuario()
     {}

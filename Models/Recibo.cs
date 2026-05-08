@@ -8,12 +8,12 @@ public class Recibo : Base
     public DateTime? Salida { get; private set; }
 
     public int AreaId { get; private set; }
-    public Area Area { get; private set; }
+    public Area Area { get; private set; } = null!;
 
-    public Vehiculo Vehiculo { get; private set; }
+    public Vehiculo Vehiculo { get; private set; } = null!;
 
     public int TarifaId { get; private set; }
-    public Tarifa Tarifa { get; private set; }
+    public Tarifa Tarifa { get; private set; } = null!;
 
     public decimal Total { get; private set; }
 

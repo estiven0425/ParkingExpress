@@ -1,10 +1,12 @@
-﻿using ParkingExpress.Models.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using ParkingExpress.Models.Enums;
 
 namespace ParkingExpress.Models;
 
 public class Tarifa : Base
 {
-    public string Nombre { get; private set; }
+    [MaxLength(255)]
+    public string Nombre { get; private set; } = string.Empty;
     public decimal Valor { get; private set; }
     public FrecuenciaTarifa Frecuencia { get; private set; }
     public TipoVehiculo TipoVehiculo { get; private set; }

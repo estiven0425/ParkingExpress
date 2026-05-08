@@ -1,8 +1,11 @@
-﻿namespace ParkingExpress.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ParkingExpress.Models;
 
 public class Rol : Base
 {
-    public string Nombre { get; private set; }
+    [MaxLength(255)]
+    public string Nombre { get; private set; } = string.Empty;
 
     public ICollection<Persona> Personas { get; set; } = new List<Persona>();
     

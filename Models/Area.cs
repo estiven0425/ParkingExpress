@@ -1,15 +1,19 @@
-﻿using ParkingExpress.Models.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using ParkingExpress.Models.Enums;
 
 namespace ParkingExpress.Models;
 
 public class Area : Base
 {
-    public string Nombre { get; private set; }
+    [MaxLength(255)]
+    public string Nombre { get; private set; } = string.Empty;
 
     public int Capacidad { get; private set; }
     private int EnUso { get; set; }
 
     public TipoVehiculo TipoVehiculo { get; private set; }
+
+    public ICollection<Recibo> Recibos { get; set; } =  new List<Recibo>();
 
     private Area()
     {}

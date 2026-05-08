@@ -5,7 +5,7 @@ namespace ParkingExpress.Models;
 public class ComprobantePago : Base
 {
     public int ReciboId { get; private set; }
-    public Recibo Recibo { get; private set; }
+    public Recibo Recibo { get; private set; } = null!;
 
     public DateTime Fecha  { get; private set; }
     public MetodoComprobanteDePago MetodoComprobanteDePago { get; private set; }
