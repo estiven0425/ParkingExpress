@@ -9,13 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\" />
       <Folder Include="Helpers\" />
       <Folder Include="Migrations\" />
-      <Folder Include="Models\Interfaces\" />
       <Folder Include="Resources\" />
-      <Folder Include="ViewModel\" />
-      <Folder Include="Views\" />
     </ItemGroup>
 
     <ItemGroup>
