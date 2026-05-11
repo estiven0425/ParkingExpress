@@ -4,7 +4,7 @@ using ParkingExpress.Models;
 
 namespace ParkingExpress.Services;
 
-public static class Sesion
+public static class SesionService
 {
     public static Usuario? UsuarioActual { get; private set; }
 
@@ -16,7 +16,7 @@ public static class Sesion
 
         Usuario? usuarioEncontrado = appDbContext.Usuarios.Include(usuario => usuario.Persona).FirstOrDefault(usuario => usuario.NombreUsuario == nombreUsuario);
 
-        if (usuarioEncontrado is not null && Seguridad.VerificarContrasena(contrasena, usuarioEncontrado.Contrasena))
+        if (usuarioEncontrado is not null && SeguridadService.VerificarContrasena(contrasena, usuarioEncontrado.Contrasena))
         {
             UsuarioActual = usuarioEncontrado;
         }

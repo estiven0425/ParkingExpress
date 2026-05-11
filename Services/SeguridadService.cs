@@ -2,7 +2,7 @@
 
 namespace ParkingExpress.Services;
 
-public static class Seguridad
+public static class SeguridadService
 {
     public static string EncriptarContrasena(string contrasena)
     {

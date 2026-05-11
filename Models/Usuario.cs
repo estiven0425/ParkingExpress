@@ -24,7 +24,7 @@ public class Usuario : Base
             : nombreUsuario;
         Contrasena = contrasena.Length < 10
                 ? throw new ArgumentOutOfRangeException(nameof(contrasena), "La contraseña debe tener mínimo 10 caracteres.")
-                : Seguridad.EncriptarContrasena(contrasena);
+                : SeguridadService.EncriptarContrasena(contrasena);
         
         RegistrarCreacion(creadoPor);
     }
@@ -44,7 +44,7 @@ public class Usuario : Base
     {
         Contrasena = contrasenaNueva.Length < 10
             ? throw new ArgumentOutOfRangeException(nameof(contrasenaNueva), "La contraseña debe tener mínimo 10 caracteres.")
-            : Seguridad.CambiarContrasena(contrasenaNueva, contrasenaActual, contrasenaAlmacenada);
+            : SeguridadService.CambiarContrasena(contrasenaNueva, contrasenaActual, contrasenaAlmacenada);
         
         RegistrarModificacion(modificadoPor);
     }

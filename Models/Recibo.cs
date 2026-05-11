@@ -51,14 +51,15 @@ public class Recibo : Base
             throw new InvalidOperationException("El recibo ya fué cerrado.");
         }
 
-        Salida = salida = Ingreso < salida
+        Salida = Ingreso < salida
             ? salida
             : throw new ArgumentException("La fecha de salida es menor que la de ingreso.");
         Total = Tarifa.CalcularTarifa(Ingreso, salida);
-        EstadoRecibo = EstadoRecibo.Cerrado;
 
         ComprobantePago comprobantePago =
             new ComprobantePago(this, metodoComprobanteDePago, Total, valorRecibido, persona);
+
+        EstadoRecibo = EstadoRecibo.Cerrado;
 
         RegistrarModificacion(modificadoPor);
 
