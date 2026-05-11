@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using ParkingExpress.Data;
-using ParkingExpress.Services;
 using ParkingExpress.Views;
 
 namespace ParkingExpress;
@@ -14,17 +13,8 @@ public partial class App
         DbInitializer.Initializer(appDbContext);
 
         LoginWindow loginWindow = new LoginWindow();
-        MainWindow mainWindow = new MainWindow();
 
-
-        if (SesionService.UsuarioActual == null)
-        {
-            loginWindow.Show();
-        }
-        else
-        {
-            mainWindow.Show();
-        }
+        loginWindow.Show();
 
         base.OnStartup(e);
     }

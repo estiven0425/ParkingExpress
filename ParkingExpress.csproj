@@ -9,9 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Helpers\" />
+      <Folder Include="Assets\Icons\" />
+      <Folder Include="Assets\Images\" />
       <Folder Include="Migrations\" />
-      <Folder Include="Resources\" />
+      <Folder Include="Resources\Styles\" />
     </ItemGroup>
 
     <ItemGroup>
@@ -25,6 +26,15 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Images\Login.png" />
+      <Resource Include="Assets\Images\Login.png" />
+      <None Remove="Assets\Images\parking_express.jpg" />
+      <Resource Include="Assets\Images\parking_express.jpg" />
+      <None Remove="Assets\Icons\parking_express.ico" />
+      <Resource Include="Assets\Icons\parking_express.ico" />
     </ItemGroup>
 
 </Project>
