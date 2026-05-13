@@ -5,6 +5,13 @@ namespace ParkingExpress.ViewModel;
 
 public abstract class BaseViewModel : INotifyPropertyChanged
 {
+    private string _error = string.Empty;
+    public string Error
+    {
+        get => _error;
+        set => SetField(ref _error, value);
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
 
     protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)

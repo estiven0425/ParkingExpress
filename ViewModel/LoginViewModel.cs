@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 using ParkingExpress.Commands;
 using ParkingExpress.Services;
 
@@ -20,13 +21,6 @@ public class LoginViewModel : BaseViewModel
         set => SetField(ref _contrasena, value);
     }
 
-    private string _error = string.Empty;
-    public string Error
-    {
-        get => _error;
-        set => SetField(ref _error, value);
-    }
-
     public ICommand IniciarSesionCommand { get; set; }
 
     public LoginViewModel()
@@ -44,9 +38,9 @@ public class LoginViewModel : BaseViewModel
 
             NavegacionService.NavegacionMain();
         }
-        catch (Exception e)
+        catch (Exception exception)
         {
-            Error = e.Message;
+            MessageBox.Show(exception.Message, "Error de credenciales.", MessageBoxButton.OK, MessageBoxImage.Stop);
         }
     }
 
@@ -56,7 +50,9 @@ public class LoginViewModel : BaseViewModel
         {
             return false;
         }
-
-        return true;
+        else
+        {
+            return true;
+        }
     }
 }

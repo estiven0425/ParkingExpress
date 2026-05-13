@@ -30,11 +30,12 @@
 
     <ItemGroup>
       <None Remove="Assets\Images\Login.png" />
-      <Resource Include="Assets\Images\Login.png" />
       <None Remove="Assets\Images\parking_express.jpg" />
       <Resource Include="Assets\Images\parking_express.jpg" />
       <None Remove="Assets\Icons\parking_express.ico" />
       <Resource Include="Assets\Icons\parking_express.ico" />
+      <None Remove="Assets\Images\Logout.png" />
+      <Resource Include="Assets\Images\Logout.png" />
     </ItemGroup>
 
 </Project>
