@@ -51,7 +51,7 @@
         <PasswordBox Grid.Column="1"
                      Grid.Row="3"
                      HorizontalContentAlignment="Left"
-                     PasswordChanged="PasswordBox_OnPasswordChanged"
+                     PasswordChanged="IngresarContrasena"
                      VerticalContentAlignment="Center"/>
         <Button Command="{Binding IniciarSesionCommand}"
                 Content="Iniciar sesión"

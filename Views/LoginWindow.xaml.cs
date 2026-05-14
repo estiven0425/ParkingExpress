@@ -13,7 +13,7 @@ public partial class LoginWindow : Window
         DataContext = new LoginViewModel();
     }
 
-    private void PasswordBox_OnPasswordChanged(object sender, RoutedEventArgs e)
+    private void IngresarContrasena(object sender, RoutedEventArgs e)
     {
         PasswordBox passwordBox = (PasswordBox)sender;
 
